@@ -10,8 +10,9 @@ Claude reads the extracted text, identifies chapters using judgment (handles non
 mkdir -p ~/.claude/skills/pdf-bookmarks
 curl -fsSL https://raw.githubusercontent.com/io614/claude-skill-pdf-bookmarks/main/SKILL.md \
   -o ~/.claude/skills/pdf-bookmarks/SKILL.md
-curl -fsSL https://raw.githubusercontent.com/io614/claude-skill-pdf-bookmarks/main/pdf_bookmarks.py \
-  -o ~/.claude/skills/pdf-bookmarks/pdf_bookmarks.py
+mkdir -p ~/.claude/skills/pdf-bookmarks/scripts
+curl -fsSL https://raw.githubusercontent.com/io614/claude-skill-pdf-bookmarks/main/scripts/pdf_bookmarks.py \
+  -o ~/.claude/skills/pdf-bookmarks/scripts/pdf_bookmarks.py
 ```
 
 Requires [uv](https://github.com/astral-sh/uv) (`pymupdf` is fetched automatically on first run).

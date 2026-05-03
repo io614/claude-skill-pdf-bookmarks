@@ -12,7 +12,7 @@ Insert chapter bookmarks into: **$ARGUMENTS**
 ### 1. Extract page content
 
 ```bash
-uv run --with pymupdf ${CLAUDE_SKILL_DIR}/pdf_bookmarks.py extract "$ARGUMENTS"
+uv run --with pymupdf ${CLAUDE_SKILL_DIR}/scripts/pdf_bookmarks.py extract "$ARGUMENTS"
 ```
 
 Read the output carefully. Each page shows its text; lines prefixed with `[Npt]` or `[Npt bold]` have a font size at least 20% larger than the document's body text — these are visually prominent and likely headings.
@@ -48,13 +48,13 @@ Show the proposed TOC to the user and ask for confirmation before inserting.
 Once confirmed:
 
 ```bash
-uv run --with pymupdf ${CLAUDE_SKILL_DIR}/pdf_bookmarks.py insert "$ARGUMENTS" /tmp/toc_bookmarks.json
+uv run --with pymupdf ${CLAUDE_SKILL_DIR}/scripts/pdf_bookmarks.py insert "$ARGUMENTS" /tmp/toc_bookmarks.json
 ```
 
 ### 5. Verify
 
 ```bash
-uv run --with pymupdf ${CLAUDE_SKILL_DIR}/pdf_bookmarks.py verify "<output-pdf-path>"
+uv run --with pymupdf ${CLAUDE_SKILL_DIR}/scripts/pdf_bookmarks.py verify "<output-pdf-path>"
 ```
 
 The output shows the first few lines of each bookmarked page. Review with the user to confirm every bookmark landed on the correct page.
